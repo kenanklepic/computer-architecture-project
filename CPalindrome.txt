@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    char s[] = "geteg";
+    int palindrome = 1;
+    int length = 0;
+
+    printf("%s", s);
+
+    while (s[length] != '\0')
+    {
+        length++;
+    }
+
+    int halfLen = length/2;
+
+    int begin = 0;
+    int end = length-1;
+
+    while(halfLen != 0)
+    {
+        if(s[begin] != s[end])
+        {
+            palindrome = 0;
+            break;
+        }
+
+        begin++;
+        end--;
+        halfLen--;
+    }
+
+    if (palindrome == 1)
+        printf("\nPalindrome");
+    else printf("\nNot Palindrome");
+
+    return 0;
+}
